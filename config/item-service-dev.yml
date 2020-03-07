@@ -1,0 +1,19 @@
+# item-service-dev.yml
+
+spring:
+  application:
+    name: item-service
+  cloud:
+  	config:
+  		override-none: true
+    
+server:
+  port: 8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka      #多机容灾可以部署多地     beijing   wuhan等等
+      #beijing: http://xxxxxxx/xxx
+      #单机只能写defaultZone
+      
