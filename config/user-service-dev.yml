@@ -21,3 +21,9 @@ eureka:
       defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka      #多机容灾可以部署多地     beijing   wuhan等等
       #beijing: http://xxxxxxx/xxx
       #单机只能写defaultZone
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
