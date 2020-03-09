@@ -3,8 +3,6 @@
 spring:
   application:
     name: order-service
-  main:
-    allow-bean-definition-overriding: true
   # 不允许配置中心的文件覆盖项目的配置，防止将启动端口信息覆盖
   cloud:
     config:
