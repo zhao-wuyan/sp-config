@@ -3,7 +3,6 @@
 spring:
   application:
     name: item-service
-  # 不允许配置中心的文件覆盖项目的配置，防止将启动端口信息覆盖
   cloud:
   	config:
   	  override-none: true
@@ -13,16 +12,13 @@ spring:
     username: admin
     password: admin
 
-    
 server: 
   port: 8001
 
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka      #多机容灾可以部署多地     beijing   wuhan等等
-      #beijing: http://xxxxxxx/xxx
-      #单机只能写defaultZone
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka 
   instance:
-    prefer-ip-address: true # 使用ip进行注册
-    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port} # 界面列表中显示的格式也显示ip 
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port} 
