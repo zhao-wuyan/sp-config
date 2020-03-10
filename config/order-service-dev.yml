@@ -22,7 +22,9 @@ eureka:
       #单机只能写defaultZone
       #beijing: http://xxxxxxx/xxx
       #wuhan: http://xxxx/xx
-      
+  instance:
+    prefer-ip-address: true # 使用ip进行注册
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port} # 界面列表中显示的格式也显示ip    
       
 feign:
   hystrix:
